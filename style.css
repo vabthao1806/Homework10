@@ -1,0 +1,406 @@
+/* ============================================================
+   style.css - Contact Manager
+   INS3064 - Homework 10
+   Student: Nguyễn Thị Thảo Vân (24070557)
+   ============================================================ */
+
+/* ---------- Base ---------- */
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --danger: #dc2626;
+    --danger-dark: #b91c1c;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --bg: #f3f4f6;
+    --card: #ffffff;
+    --border: #d1d5db;
+    --zebra: #f8fafc;
+    --success-bg: #dcfce7;
+    --success-text: #14532d;
+    --error-bg: #fee2e2;
+    --error-text: #7f1d1d;
+    --warning-bg: #fef9c3;
+    --warning-text: #713f12;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text);
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main.container {
+    flex: 1;
+}
+
+h1 {
+    font-size: 26px;
+    margin: 0 0 4px;
+}
+
+h2 {
+    font-size: 20px;
+    margin: 0 0 12px;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* ---------- Header and footer ---------- */
+.site-header {
+    background: var(--text);
+    color: #fff;
+    padding: 14px 0;
+    margin-bottom: 24px;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.brand {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.site-header nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-header nav a {
+    color: #e5e7eb;
+}
+
+.site-footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+    padding: 24px 0;
+}
+
+/* ---------- Page title and totals ---------- */
+.page-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.total {
+    margin: 0;
+    color: var(--muted);
+}
+
+/* ---------- Cards ---------- */
+.card {
+    background: var(--card);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--text);
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    text-decoration: none;
+    background: #f9fafb;
+}
+
+.btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-danger {
+    background: var(--danger);
+    border-color: var(--danger);
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background: var(--danger-dark);
+}
+
+.btn-small {
+    padding: 8px 14px;
+    font-size: 14px;
+}
+
+/* ---------- Flash messages ---------- */
+.flash {
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    border-left: 5px solid;
+}
+
+.flash ul {
+    margin: 8px 0 0 20px;
+    padding: 0;
+}
+
+.flash-success {
+    background: var(--success-bg);
+    border-color: #16a34a;
+    color: var(--success-text);
+}
+
+.flash-error {
+    background: var(--error-bg);
+    border-color: var(--danger);
+    color: var(--error-text);
+}
+
+.flash-warning {
+    background: var(--warning-bg);
+    border-color: #ca8a04;
+    color: var(--warning-text);
+}
+
+/* ---------- Search bar ---------- */
+.search-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.search-form input[type="search"] {
+    flex: 1 1 240px;
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+/* ---------- Table ---------- */
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    background: var(--card);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.contacts-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.contacts-table th,
+.contacts-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+.contacts-table td:first-child {
+    white-space: normal;
+}
+
+.contacts-table thead th {
+    background: #e5e7eb;
+    font-weight: bold;
+}
+
+.contacts-table thead th a {
+    color: var(--text);
+}
+
+/* Zebra striping: every second row gets a light background */
+.contacts-table tbody tr:nth-child(even) {
+    background: var(--zebra);
+}
+
+.contacts-table tbody tr:hover {
+    background: #eef2ff;
+}
+
+.contacts-table .empty {
+    text-align: center;
+    color: var(--muted);
+    padding: 24px;
+}
+
+.actions a {
+    font-weight: bold;
+}
+
+.danger {
+    color: var(--danger);
+}
+
+/* Group badges */
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 13px;
+    background: #e5e7eb;
+    color: var(--text);
+}
+
+.badge-family  { background: #fde68a; }
+.badge-friends { background: #bfdbfe; }
+.badge-work    { background: #ddd6fe; }
+.badge-other   { background: #fbcfe8; }
+.badge-general { background: #e5e7eb; }
+
+/* ---------- Forms ---------- */
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px 12px;
+    font-size: 16px;
+    font-family: inherit;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: 2px solid var(--primary);
+    border-color: var(--primary);
+}
+
+.required {
+    color: var(--danger);
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+/* ---------- Delete confirmation ---------- */
+.confirm-question {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.details {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+}
+
+.details th,
+.details td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: top;
+}
+
+.details th {
+    width: 110px;
+    color: var(--muted);
+    font-weight: normal;
+}
+
+.warning-text {
+    color: var(--danger);
+    font-weight: bold;
+}
+
+.confirm-card .form-actions {
+    margin-top: 16px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+    body {
+        font-size: 15px;
+    }
+
+    .site-header nav {
+        gap: 10px;
+    }
+
+    .contacts-table {
+        font-size: 14px;
+    }
+
+    .contacts-table th,
+    .contacts-table td {
+        padding: 10px 8px;
+    }
+
+    .search-form .btn {
+        flex: 1 1 auto;
+    }
+}
